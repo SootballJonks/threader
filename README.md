@@ -1,7 +1,11 @@
-# THREADER
+# THREADERBOT
 ---
-A Discord-bot WIP built for LHL's CyberSec bootcamp.
+A Discord-bot built for LHL's CyberSec bootcamp. *Very* basic functionality.
 
-WIP WIP WIP
+## COMMANDS:
+- "/auto":      Will auto-unarchive the current thread.
+- "/auto-off":  Will turn off the auto feature - let those threads rest ;)
 
-Did I mention WIP?
+
+## INVITE LINK:
+[COMING SOON]
