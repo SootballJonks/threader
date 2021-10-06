@@ -20,7 +20,6 @@ for (const file of eventFiles) {
   }
 }
 
-
 //--------SLASH COMMANDS LOGIC----------
 
 client.commands = new Collection();
@@ -32,7 +31,33 @@ for (const file of commandFiles) {
   client.commands.set(command.data.name, command);
 }
 
+//Async listener for slash commands
+client.on("interactionCreate", async (interaction) => {
+  if(!interaction.isCommand()) {
+    return;
+  };
+
+  const command = client.commands.get(interaction.commandName);
+  const channel = client.channels.cache;
+
+  if (!command) {
+    return;
+  };
+
+  try {
+    await command.execute(interaction, channel);
+  } catch (error) {
+    console.error(error);
+    return interaction.reply({
+      content: "There was an error while executing this command!",
+      ephemeral: true
+    })
+  };
+});
+
 //--------------------------------------
+
+
 
 
 

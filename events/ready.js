@@ -1,3 +1,5 @@
+//Synchronous functionality for this event
+
 module.exports = {
   name: "ready",
   once: true,

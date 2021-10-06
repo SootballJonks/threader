@@ -5,10 +5,16 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("auto")
-    .setDescription("Will auto-unarchive the thread that this command is called in!"),
+    .setDescription("Will auto-unarchive the thread that this command is called in."),
 
   async execute(interaction) {
-      return interaction.reply(`Hooray! You called "Auto!"`);
+    if (!interaction.channel.isThread()) {
+      return interaction.reply(`
+      \`\`\`Sorry - I only work inside threads!\`\`\`
+      `);
+    } 
+    interaction.channel.markForAuto = true;
+    return interaction.reply(`\`\`\`Hooray! This thread will never be archived again!\`\`\``);
   },
 
 };

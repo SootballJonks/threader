@@ -5,10 +5,19 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("auto-off")
-    .setDescription("Turns off auto-unarchiving for this thread. Just let it die, already!"),
+    .setDescription("Turns off auto-unarchiving for this thread."),
 
   async execute(interaction) {
-      return interaction.reply(`Hooray! You called "Auto-off!"`);
+    if (!interaction.channel.isThread()) {
+      return interaction.reply(`
+      \`\`\`Sorry - I only work inside threads!\`\`\`
+      `);
+    }
+    if (!interaction.channel.markForAuto) {
+      return interaction.reply(`\`\`\`No worries - this thread was never set to "auto-unarchive" :)\`\`\``)
+    } 
+    interaction.channel.markForAuto = false;
+    return interaction.reply(`\`\`\`Okay, I'll stop watching this thread :)\`\`\``);
   },
   
 };
