@@ -8,4 +8,4 @@ A Discord-bot built for LHL's CyberSec bootcamp. *Very* basic functionality.
 
 
 ## INVITE LINK:
-[COMING SOON]
+[PENDING]
