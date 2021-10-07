@@ -21,4 +21,7 @@ If you want to just upload this to your dev account and use it, here's what you'
 
 
 ## INVITE LINK:
-[PENDING]
+I have 24/7 hosting for now. If the bot is offline, I'm no longer hosting it:
+
+https://discord.com/api/oauth2/authorize?client_id=895002986588303371&permissions=17179869184&scope=bot%20applications.commands
+
