@@ -21,8 +21,4 @@ If you want to just upload this to your dev account and use it, here's what you'
 
 
 ## INVITE LINK:
-<<<<<<< HEAD
 [PENDING]
-=======
-[PENDING]
->>>>>>> 96155c77f656fb909cb8cf908eff34352958d2e8

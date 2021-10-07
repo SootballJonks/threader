@@ -8,11 +8,16 @@ module.exports = {
     .setDescription("Turns off auto-unarchiving for this thread."),
 
   async execute(interaction) {
+    if (!interaction.channel) {
+      return;
+    }
+
     if (!interaction.channel.isThread()) {
       return interaction.reply(`
       \`\`\`Sorry - I only work inside threads!\`\`\`
       `);
     }
+
     if (!interaction.channel.markForAuto) {
       return interaction.reply(`\`\`\`No worries - this thread was never set to "auto-unarchive" :)\`\`\``)
     } 
